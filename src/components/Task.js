@@ -11,10 +11,10 @@ const Task = ({ task, dayTime }) => {
         className={`Task ${marked}`}
         onClick={() => !finished && setMarked(!marked)}
       >
-        <h3>
-          {task} <RiCloseLine onClick={() => setFinished(true)} />
+        <h3 className="task">
+          {task} <RiCloseLine className="text-danger closeIcon" onClick={() => setFinished(true)} />
         </h3>
-        <p>{dayTime}</p>
+        <p className="dayTime">{dayTime}</p>
       </div>
     )
   );

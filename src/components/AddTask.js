@@ -7,7 +7,9 @@ const AddTask = () => {
   const [add, setAdd] = useState(false);
 
   const saveTask = () => {
-    setAdd(true);
+    task && setAdd(true);
+    setTask("");
+    setDayTime("");
   }
 
   return (

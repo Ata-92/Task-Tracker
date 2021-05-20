@@ -27,3 +27,15 @@
 .AddTask .container {
   margin-top: 3vh;
 }
+
+.Task {
+  background-color: #F4F4F4;
+}
+
+.false {
+  display: none;
+}
+
+.true {
+  display: initial;
+}
