@@ -1,6 +1,5 @@
 const AddTask = () => {
 
-
   return (
     <div className="AddTask">
       <form className="form" action="/" method="get">
@@ -11,6 +10,9 @@ const AddTask = () => {
         <div className="container">
           <label htmlFor="dt" className="form-label">Day & Time</label>
           <input id="dt" className="form-control" type="text" placeholder="Add Day & Time"/>
+        </div>
+        <div className="container">
+          <button className="btn saveButton" type="button" onClick={saveTask}>Save Task</button>
         </div>
       </form>
     </div>
