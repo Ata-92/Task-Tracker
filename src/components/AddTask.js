@@ -22,7 +22,7 @@ const AddTask = () => {
           <input id="dt" className="form-control" type="text" value={dayTime} onChange={(e) => setDayTime(e.target.value)} placeholder="Add Day & Time"/>
         </div>
         <div className="container">
-          <button className="btn saveButton" type="button" onClick={saveTask}>Save Task</button>
+          <button className="btn text-light w-100 saveButton" type="button" onClick={saveTask}>Save Task</button>
         </div>
       </form>
       {add && <Task task={task} dayTime={dayTime}/>}

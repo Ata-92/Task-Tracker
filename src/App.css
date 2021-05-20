@@ -7,13 +7,23 @@
 .App > .container {
   background: linear-gradient(to bottom right, #CE1E7E, #E5B8D1);
   width: 40%;
+  /**
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  */
+  padding: 3vh 0;
 }
 
 .Header {
   text-align: center;
+  margin-bottom: 3vh;
 }
 
-.showButton {
+.showButton, .saveButton {
   background-color: #6D0E8A;
-  color: #fff;
+}
+
+.AddTask .container {
+  margin-top: 3vh;
 }

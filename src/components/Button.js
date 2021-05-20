@@ -12,11 +12,11 @@ const Button = () => {
     <div className="Button">
       {show ? (
         <div className="container">
-          <button className="btn btn-danger" onClick={openClose}>Close Add Task Bar</button>
+          <button className="btn btn-danger px-3 text-light d-block mx-auto closeButton" onClick={openClose}>Close Add Task Bar</button>
           <AddTask />
         </div>
       ) : (
-        <button className="btn showButton" onClick={openClose}>Show Add Task Bar</button>
+        <button className="btn text-light px-3 d-block mx-auto showButton" onClick={openClose}>Show Add Task Bar</button>
       )}
     </div>
   );
