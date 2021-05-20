@@ -4,19 +4,19 @@ import AddTask from './AddTask';
 const Button = () => {
   const [show, setShow] = useState(false);
 
-  const showClose = () => {
+  const openClose = () => {
     setShow(!show);
   }
 
   return (
     <div className="Button">
       {show ? (
-        <div className="wrapper">
-          <button onClick={showClose}>Close Add Task Bar</button>
+        <div className="container">
+          <button className="btn btn-danger" onClick={openClose}>Close Add Task Bar</button>
           <AddTask />
         </div>
       ) : (
-        <button onClick={showClose}>Show Add Task Bar</button>
+        <button className="btn showButton" onClick={openClose}>Show Add Task Bar</button>
       )}
     </div>
   );
