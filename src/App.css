@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.container {
+.App > .container {
   background: linear-gradient(to bottom right, #CE1E7E, #E5B8D1);
   width: 40%;
 }
