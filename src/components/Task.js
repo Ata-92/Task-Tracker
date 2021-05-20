@@ -1,15 +1,23 @@
-import { useState } from 'react';
-import { RiCloseLine} from 'react-icons';
+import { useState } from "react";
+import { RiCloseLine } from "react-icons/ri";
 
-const Task = ({task, dayTime}) => {
-
+const Task = ({ task, dayTime }) => {
+  const [marked, setMarked] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   return (
-    <div>
-      <h3>{task} <RiCloseLine /></h3>
-      <p>{dayTime}</p>
-    </div>
-  )
-}
+    !finished && (
+      <div
+        className={`Task ${marked}`}
+        onClick={() => !finished && setMarked(!marked)}
+      >
+        <h3>
+          {task} <RiCloseLine onClick={() => setFinished(true)} />
+        </h3>
+        <p>{dayTime}</p>
+      </div>
+    )
+  );
+};
 
 export default Task;
