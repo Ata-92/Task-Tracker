@@ -4,6 +4,10 @@ import AddTask from './AddTask';
 const Button = () => {
   const [show, setShow] = useState(false);
 
+  const showClose = () => {
+    setShow(!show);
+  }
+
   return (
     <div className="Button">
       {show ? (
