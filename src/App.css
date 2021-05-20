@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background-color: #FEE3C4;
   display: flex;
   justify-content: center;
@@ -8,6 +7,10 @@
 .App > .container {
   background: linear-gradient(to bottom right, #CE1E7E, #E5B8D1);
   width: 40%;
+}
+
+.Header {
+  text-align: center;
 }
 
 .showButton {

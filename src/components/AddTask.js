@@ -1,17 +1,21 @@
 import { useState } from "react";
+import Task from './Task';
 
 const AddTask = () => {
   const [task, setTask] = useState("");
   const [dayTime, setDayTime] = useState("");
+  const [add, setAdd] = useState(false);
 
-
+  const saveTask = () => {
+    setAdd(true);
+  }
 
   return (
     <div className="AddTask">
       <form className="form" action="/" method="get">
         <div className="container">
           <label htmlFor="task" className="form-label">Task</label>
-          <input id="task" className="form-control" type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="AddTask"/>
+          <input id="task" className="form-control" type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="AddTask" required/>
         </div>
         <div className="container">
           <label htmlFor="dt" className="form-label">Day & Time</label>
@@ -21,6 +25,7 @@ const AddTask = () => {
           <button className="btn saveButton" type="button" onClick={saveTask}>Save Task</button>
         </div>
       </form>
+      {add && <Task task={task} dayTime={dayTime}/>}
     </div>
   )
 }
