@@ -5,7 +5,7 @@ import Button from './components/Button';
 function App() {
   return (
     <div className="App">
-      <div className="container my-5">
+      <div className="container mt-5">
         <Header />
         <Button />
       </div>

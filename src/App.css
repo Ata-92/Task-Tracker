@@ -7,12 +7,11 @@
 .App > .container {
   background: linear-gradient(to bottom right, #CE1E7E, #E5B8D1);
   width: 30%;
-  /**
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding: 3vh 0;
+  margin-bottom: 80vh;
 }
 
 .Header {
