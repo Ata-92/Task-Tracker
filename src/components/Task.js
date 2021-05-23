@@ -1,22 +1,28 @@
 import { useState } from "react";
 import { RiCloseLine } from "react-icons/ri";
 
-const Task = ({ task, dayTime }) => {
+const Task = ({ task, deleteTask }) => {
   const [marked, setMarked] = useState(false);
-  const [finished, setFinished] = useState(false);
+
+  const closeTask = () => {
+    deleteTask(task.id);
+  };
 
   return (
-    !finished && (
-      <div
-        className={`Task ${marked}`}
-        onClick={() => !finished && setMarked(!marked)}
-      >
-        <h3 className="task">
-          {task} <RiCloseLine className="text-danger closeIcon" onClick={() => setFinished(true)} />
-        </h3>
-        <p className="dayTime">{dayTime}</p>
-      </div>
-    )
+    <div
+      className={`Task ${marked} mx-2 mt-3`}
+      onDoubleClick={() => setMarked(!marked)}
+    >
+      <h5 className="task px-2 pt-1">
+        {task.task}{" "}
+        <RiCloseLine
+          className="text-danger closeIcon float-end"
+          role="button"
+          onClick={closeTask}
+        />
+      </h5>
+      <p className="dayTime px-2 pb-1">{task.dayTime}</p>
+    </div>
   );
 };
 
