@@ -1,6 +1,5 @@
 const Header = () => {
 
-
   return (
     <div className="Header">
       <h1>Task Tracker</h1>
