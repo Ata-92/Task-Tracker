@@ -31,7 +31,7 @@ const Button = () => {
             Close Add Task Bar
           </button>
           <AddTask addTask={addTask} />
-          <Tasks tasks={tasks} deleteTask={deleteTask}/>
+          {tasks.length === 0 ? <h6 className="m-3">No tasks to show</h6> : <Tasks tasks={tasks} deleteTask={deleteTask}/>}
         </div>
       ) : (
         <div className="container">
@@ -41,7 +41,7 @@ const Button = () => {
           >
             Show Add Task Bar
           </button>
-          <Tasks tasks={tasks} deleteTask={deleteTask}/>
+          {tasks.length === 0 ? <h6 className="m-3">No tasks to show</h6> : <Tasks tasks={tasks} deleteTask={deleteTask}/>}
         </div>
       )}
     </div>
