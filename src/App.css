@@ -33,9 +33,9 @@
 }
 
 .false {
-  display: none;
+  border: none;
 }
 
 .true {
-  display: initial;
+  border-left: 1vw solid #6D0E8A;
 }
