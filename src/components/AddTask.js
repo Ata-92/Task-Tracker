@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useRef } from "react";
 
 const AddTask = ({ addTask }) => {
-  const [task, setTask] = useState("");
-  const [dayTime, setDayTime] = useState("");
+  const task = useRef();
+  const dayTime = useRef();
 
-  const saveTask = () => {
-    addTask(task, dayTime);
-    setTask("");
-    setDayTime("");
-  }
+  const saveTask = (e) => {
+    e.preventDefault();
+    addTask({task: task.current.value, dayTime: dayTime.current.value});
+    task.current.value = "";
+    dayTime.current.value = "";
+  };
 
   return (
     <div className="AddTask">
-      <form className="form" action="/" method="get">
+      <form className="form" action="/" method="get" onSubmit={saveTask}>
         <div className="container">
           <label htmlFor="task" className="form-label">
             Task
@@ -21,8 +22,7 @@ const AddTask = ({ addTask }) => {
             id="task"
             className="form-control"
             type="text"
-            value={task}
-            onChange={e => setTask(e.target.value)}
+            ref={task}
             placeholder="AddTask"
             required
           />
@@ -35,17 +35,13 @@ const AddTask = ({ addTask }) => {
             id="dt"
             className="form-control"
             type="text"
-            value={dayTime}
-            onChange={e => setDayTime(e.target.value)}
+            ref={dayTime}
             placeholder="Add Day & Time"
+            required
           />
         </div>
         <div className="container">
-          <button
-            className="btn text-light w-100 saveButton"
-            type="button"
-            onClick={saveTask}
-          >
+          <button className="btn text-light w-100 saveButton" type="submit">
             Save Task
           </button>
         </div>
